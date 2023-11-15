@@ -1,11 +1,15 @@
+/*
+ * @Date: 2023-11-09 10:13:19
+ * @Description: description
+ */
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Detail from './src_08_textInput/index';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container }>
+      <Detail />
     </View>
   );
 }
