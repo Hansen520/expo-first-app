@@ -4,7 +4,7 @@
  */
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Detail from './src_08_textInput/index';
+import Detail from './src_13_Animated/index';
 
 export default function App() {
   return (
