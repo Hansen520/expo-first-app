@@ -6,9 +6,10 @@ class Storage {
     return AsyncStorage.setItem(key, JSON.stringify(value));
   }
   // 查
-  static get(key: string, value: string) {
+  static get(key: string) {
     return AsyncStorage.getItem(key)
       .then((value) => {
+        console.log(value, 12);
         if (value && value !== "") {
           const jsonValue = JSON.parse(value);
           return jsonValue;

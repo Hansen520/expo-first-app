@@ -3,8 +3,8 @@
  * @Description: description
  */
 import React, { useRef, useState } from "react";
-import { Animated, ScrollView, View, StyleSheet, Image, Dimensions } from "react-native";
-import Swiper from "react-native-swiper";
+import { Animated, Text, View, StyleSheet, Button, Dimensions } from "react-native";
+import Storage from './storage';
 
 const App = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("java");
@@ -12,7 +12,8 @@ const App = () => {
 
   return (
     <View>
-      
+      <Button title="获取" onPress={async () => alert( await Storage.get('key'))} />
+      <Button title="存储" onPress={() => Storage.set('key', '泰山')} />
     </View>
   );
 };

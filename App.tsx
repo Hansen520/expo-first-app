@@ -4,7 +4,7 @@
  */
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Detail from './src_16_swiper/index';
+import Detail from './src_19_Camera/index';
 
 export default function App() {
   return (
