@@ -5,7 +5,8 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import Detail from "./src_24_Drawer/index";
+import Detail from "./src_27_PassingParameters/index";
+
 
 export default function App() {
   return (
