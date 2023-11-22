@@ -3,7 +3,6 @@
  * @Description: description
  */
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { NavigationContainer } from "@react-navigation/native";
 import { Button, View } from "react-native";
 
 function HomeScreen({ navigation }: any) {
@@ -12,7 +11,7 @@ function HomeScreen({ navigation }: any) {
       <Button onPress={navigation.openDrawer} title="Open navigation drawer" />
       <Button
         onPress={() => navigation.navigate("Notifications")}
-        title="Go to notifications"
+        title="我要去notifications"
       />
     </View>
   );
