@@ -1,5 +1,8 @@
+/*
+ * @Date: 2023-11-21 14:05:15
+ * @Description: description
+ */
 import { createDrawerNavigator } from "@react-navigation/drawer";
-
 import { NavigationContainer } from "@react-navigation/native";
 import { Button, View } from "react-native";
 
@@ -19,13 +22,12 @@ function NotificationsScreen({ navigation }: any) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Button onPress={navigation.openDrawer} title="Open navigation drawer" />
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
+      <Button onPress={() => navigation.goBack()} title="返回home" />
     </View>
   );
 }
 
 const Drawer = createDrawerNavigator();
-
 export default function App() {
   return (
       <Drawer.Navigator initialRouteName="Home">

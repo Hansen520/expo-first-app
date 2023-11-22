@@ -3,7 +3,6 @@
  * @Description: description
  */
 import { Camera, CameraType } from "expo-camera";
-import React, { useState, useEffect } from "react";
 import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "react-native";
 import { DefaultNavigatorOptions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
