@@ -5,7 +5,7 @@ import NewsScreen from "../screens/News";
 const Stack = createStackNavigator();
 const NewsStack = (prop: any) => {
   return (
-    <Stack.Navigator initialRouteName="News" headerNode={"none"}>
+    <Stack.Navigator headerMode={"none"}>
       <Stack.Screen
         name="News"
         component={NewsScreen}

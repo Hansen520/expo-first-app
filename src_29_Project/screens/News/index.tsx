@@ -6,7 +6,7 @@ import {View, Text} from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
-function News() {
+function NewsScreen() {
   return (
     <View>
       <Text>News</Text>
@@ -14,4 +14,4 @@ function News() {
   );
 }
 
-export default News;
+export default NewsScreen;

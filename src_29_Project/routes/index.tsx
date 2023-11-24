@@ -1,6 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import HomeStack from "./HomeStack";
 import NewsStack from "./NewsStack";
 import UserStack from "./UserStack";
@@ -9,17 +9,20 @@ const Tab = createBottomTabNavigator();
 const App = () => {
   return (
     <Tab.Navigator
-      // screenOptions={({ route }: any) => ({
-      //   tabBarIcon: ({ focused, color, size }: any) => {
-      //     let iconName: any;
-      //     if (route.name === "Home") {
-      //       iconName = "首页";
-      //     } else if (route.name === "News") {
-      //       iconName = "新闻";
-      //     }
-      //     return <Button title={iconName} color={color} />;
-      //   },
-      // })}
+      screenOptions={({ route }: any) => ({
+        tabBarIcon: ({ focused, color, size }: any) => {
+          let iconName: any;
+          console.log(route, focused, color, size, 15);
+          if (route.name === "Home") {
+            iconName = focused ? 'add-circle' : 'add-circle-outline';
+          } else if (route.name === "News") {
+            iconName = focused ? 'settings' : 'person-outline'
+          } else if (route.name === 'User') {
+            iconName = focused ? 'settings' : 'person-outline'
+          }
+          return <Ionicons title={iconName} color={color} size={size} />;
+        },
+      })}
       tarBarOptions={{
         activeTintColor: "tomato",
         inactiveTintColor: "gray",

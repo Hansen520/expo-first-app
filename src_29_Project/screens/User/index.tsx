@@ -2,7 +2,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
-function User() {
+function UserScreen() {
   return (
     <View>
       <Text>User</Text>
@@ -10,4 +10,4 @@ function User() {
   );
 }
 
-export default User;
+export default UserScreen;

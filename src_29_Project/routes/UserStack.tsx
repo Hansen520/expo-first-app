@@ -9,7 +9,7 @@ import UserScreen from "../screens/User";
 const Stack = createStackNavigator();
 const UserStack = (prop: any) => {
   return (
-    <Stack.Navigator initialRouteName="User" headerNode={"none"}>
+    <Stack.Navigator headerMode={"none"}>
       <Stack.Screen
         name="User"
         component={UserScreen}
