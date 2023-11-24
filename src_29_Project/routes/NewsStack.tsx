@@ -7,7 +7,7 @@ const NewsStack = (prop: any) => {
   return (
     <Stack.Navigator initialRouteName="News" headerNode={"none"}>
       <Stack.Screen
-        name="Home"
+        name="News"
         component={NewsScreen}
         options={{
           title: "新闻",
@@ -20,7 +20,7 @@ const NewsStack = (prop: any) => {
           //   </TouchableOpacity>
           // ),
         }}
-      />
+      /> 
     </Stack.Navigator>
   );
 };

@@ -5,7 +5,7 @@ import HomeScreen from "../screens/Home";
 const Stack = createStackNavigator();
 const HomeStack = (prop: any) => {
   return (
-    <Stack.Navigator initialRouteName="News" headerNode={"none"}>
+    <Stack.Navigator initialRouteName="Home" headerNode={"none"}>
       <Stack.Screen
         name="Home"
         component={HomeScreen}
