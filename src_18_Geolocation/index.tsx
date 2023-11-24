@@ -52,6 +52,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     height: 200,
+    marginTop: 30
   },
-  paragraph: {},
+  paragraph: {
+    marginTop: 20
+  },
 });
