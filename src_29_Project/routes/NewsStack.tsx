@@ -1,27 +1,27 @@
 import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import NewsScreen from '../screens/News';
+import NewsScreen from "../screens/News";
 
 const Stack = createStackNavigator();
 const NewsStack = (prop: any) => {
   return (
     <Stack.Navigator initialRouteName="News" headerNode={"none"}>
-        <Stack.Screen
-          name="Home"
-          component={NewsScreen}
-          options={{
-            title: "新闻",
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            // headerRight: () => (
-            //   <TouchableOpacity onPress={() => alert("hi Hello")}>
-            //     <Text>Hello</Text>
-            //   </TouchableOpacity>
-            // ),
-          }}
-        />
-      </Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={NewsScreen}
+        options={{
+          title: "新闻",
+          headerStyle: {
+            backgroundColor: "tomato",
+          },
+          // headerRight: () => (
+          //   <TouchableOpacity onPress={() => alert("hi Hello")}>
+          //     <Text>Hello</Text>
+          //   </TouchableOpacity>
+          // ),
+        }}
+      />
+    </Stack.Navigator>
   );
 };
 

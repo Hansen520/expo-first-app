@@ -5,7 +5,7 @@
 import { View, Button, Text, TextInput } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-  
+import MainTab from './routes'
 
 
 export default function App() {
@@ -16,9 +16,6 @@ export default function App() {
 
   }
   return (
-    <View>
-      <Button title="点击获取数据" onPress={() => getData()}/>
-
-    </View>
+    <MainTab />
   );
 }

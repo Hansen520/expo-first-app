@@ -1,12 +1,9 @@
-import { Camera, CameraType } from "expo-camera";
-import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "react-native";
-import { DefaultNavigatorOptions } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "./HomeStack";
-import NewsScreen from "./NewsStack";
-import UserScreen from "./UserStack";
+import HomeStack from "./HomeStack";
+import NewsStack from "./NewsStack";
+import UserStack from "./UserStack";
 
 const Tab = createBottomTabNavigator();
 const App = () => {
@@ -28,9 +25,9 @@ const App = () => {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="News" component={NewsScreen} />
-      <Tab.Screen name="User" component={UserScreen} />
+      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="News" component={NewsStack} />
+      <Tab.Screen name="User" component={UserStack} />
     </Tab.Navigator>
   );
 };
