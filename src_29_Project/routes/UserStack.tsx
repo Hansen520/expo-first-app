@@ -6,6 +6,7 @@
 import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import UserScreen from "../screens/User";
+import AboutScreen from '../screens/User/About';
 
 const Stack = createStackNavigator();
 export default (prop: any) => {
@@ -20,9 +21,19 @@ export default (prop: any) => {
         name="User"
         component={UserScreen}
         options={{
-          title: "用户",
+          title: "个人中心",
           headerStyle: {
-            backgroundColor: "tomato",
+            backgroundColor: "#fff",
+          },
+        }}
+      />
+      <Stack.Screen
+        name="About"
+        component={AboutScreen}
+        options={{
+          title: "关于",
+          headerStyle: {
+            backgroundColor: "#fff",
           },
         }}
       />

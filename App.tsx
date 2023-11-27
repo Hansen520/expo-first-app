@@ -5,11 +5,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-<<<<<<< Updated upstream
 import Detail from "./src_29_Project/index";
-=======
-import Detail from "./src_18_Geolocation/index";
->>>>>>> Stashed changes
 
 
 export default function App() {
