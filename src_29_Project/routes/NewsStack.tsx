@@ -3,24 +3,23 @@ import { createStackNavigator } from "@react-navigation/stack";
 import NewsScreen from "../screens/News";
 
 const Stack = createStackNavigator();
-const NewsStack = (prop: any) => {
+export default (prop: any) => {
   return (
-    <Stack.Navigator headerMode={"none"}>
+    <Stack.Navigator
+      screenOptions={{
+        headerMode: "screen",
+      }}
+    >
       <Stack.Screen
         name="News"
         component={NewsScreen}
         options={{
           title: "新闻",
           headerStyle: {
-            backgroundColor: "tomato",
+            backgroundColor: "white",
           },
-          // headerRight: () => (
-          //   <TouchableOpacity onPress={() => alert("hi Hello")}>
-          //     <Text>Hello</Text>
-          //   </TouchableOpacity>
-          // ),
         }}
-      /> 
+      />
     </Stack.Navigator>
   );
 };
@@ -35,5 +34,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-export default NewsStack;

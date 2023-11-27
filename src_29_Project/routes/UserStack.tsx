@@ -1,15 +1,21 @@
 /*
  * @Date: 2023-11-24 11:11:26
- * @Description: descriptio
+ * @Description: description
  */
+
 import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import UserScreen from "../screens/User";
 
 const Stack = createStackNavigator();
-const UserStack = (prop: any) => {
+export default (prop: any) => {
   return (
-    <Stack.Navigator headerMode={"none"}>
+    <Stack.Navigator
+      initialRouteName="User"
+      screenOptions={{
+        headerMode: "screen",
+      }}
+    >
       <Stack.Screen
         name="User"
         component={UserScreen}
@@ -18,11 +24,6 @@ const UserStack = (prop: any) => {
           headerStyle: {
             backgroundColor: "tomato",
           },
-          // headerRight: () => (
-          //   <TouchableOpacity onPress={() => alert("hi Hello")}>
-          //     <Text>Hello</Text>
-          //   </TouchableOpacity>
-          // ),
         }}
       />
     </Stack.Navigator>
@@ -40,4 +41,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UserStack;

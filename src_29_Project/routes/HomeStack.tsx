@@ -4,13 +4,12 @@ import HomeScreen from "../screens/Home";
 import TakePictureScreen from "../screens/Home/TakePicture";
 
 const Stack = createStackNavigator();
-const HomeStack = (prop: any) => {
+export default (prop: any) => {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      headerMode={"none"}
-      navigationOptions={{
-        headerVisible: false,
+      screenOptions={{
+        headerMode: "screen",
       }}
     >
       <Stack.Screen name="TakePicture" component={TakePictureScreen} />
@@ -46,5 +45,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-export default HomeStack;

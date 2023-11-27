@@ -8,7 +8,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Swiper from "react-native-swiper";
 
 const Stack = createStackNavigator();
-function HomeScreen() {
+export default () => {
   return (
     <View>
       <ScrollView>
@@ -87,5 +87,3 @@ const styles = StyleSheet.create({
     height: 200,
   },
 });
-
-export default HomeScreen;

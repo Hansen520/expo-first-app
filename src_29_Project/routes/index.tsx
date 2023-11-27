@@ -1,3 +1,7 @@
+/*
+ * @Date: 2023-11-24 11:10:03
+ * @Description: description
+ */
 import { StyleSheet, Button } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -5,14 +9,14 @@ import HomeStack from "./HomeStack";
 import NewsStack from "./NewsStack";
 import UserStack from "./UserStack";
 
-const Tab = createBottomTabNavigator();
+const TabBottom = createBottomTabNavigator();
 const App = () => {
   return (
-    <Tab.Navigator
+    <TabBottom.Navigator
+      initialRouteName="News"
       screenOptions={({ route }: any) => ({
-        tabBarIcon: ({ focused, color, size }: any) => {
+        TabBottomBarIcon: ({ focused, color, size }: any) => {
           let iconName: any;
-          console.log(route, focused, color, size, 15);
           if (route.name === "Home") {
             iconName = focused ? 'add-circle' : 'add-circle-outline';
           } else if (route.name === "News") {
@@ -28,10 +32,10 @@ const App = () => {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Home" component={HomeStack} />
-      <Tab.Screen name="News" component={NewsStack} />
-      <Tab.Screen name="User" component={UserStack} />
-    </Tab.Navigator>
+      <TabBottom.Screen name="Home" component={HomeStack} />
+      <TabBottom.Screen name="News" component={NewsStack} />
+      <TabBottom.Screen name="User" component={UserStack} />
+    </TabBottom.Navigator>
   );
 };
 
