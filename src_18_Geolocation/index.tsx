@@ -21,7 +21,7 @@ export default function App() {
       }
       try {
         let location = await Location.getCurrentPositionAsync({
-          accuracy: Location.Accuracy.Highest,
+          // accuracy: Location.Accuracy4.Highest,
           distanceInterval: 10000,
           timeInterval: 15000,
         });
@@ -38,6 +38,9 @@ export default function App() {
     text = errorMsg;
   } else if (location) {
     text = JSON.stringify(location);
+  } else { 
+
+    text = 'no Loading'
   }
 
   return (
@@ -51,10 +54,17 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: 200,
     marginTop: 30
   },
   paragraph: {
     marginTop: 20
   },
+<<<<<<< Updated upstream
+=======
+  paragraph: {
+    marginTop: 100
+  },
+>>>>>>> Stashed changes
 });
