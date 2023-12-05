@@ -48,6 +48,15 @@ export default ({ navigation }) => {
               <Ionicons name={'chevron-forward-outline'} size={20} color={'#bbb'} />
           </View>
         </TouchableOpacity>
+        <TouchableOpacity onPress={navigation.navigate('Counter')}>
+          <View style={[styles.listItem]}>
+            <View style={{ flexDirection: 'row' }}>
+              <Ionicons name={'settings-outline'} size={20} color={'#2d3'} />
+              <Text style={{ marginLeft: 10 }}>计数器</Text>
+            </View>
+              <Ionicons name={'chevron-forward-outline'} size={20} color={'#bbb'} />
+          </View>
+        </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
   );

@@ -7,6 +7,7 @@ import { TouchableOpacity, Button, Text, View, StyleSheet, Dimensions } from "re
 import { createStackNavigator } from "@react-navigation/stack";
 import UserScreen from "../screens/User";
 import AboutScreen from '../screens/User/About';
+import CounterScreen from '../screens/User/Counter';
 
 const Stack = createStackNavigator();
 export default (prop: any) => {
@@ -32,6 +33,16 @@ export default (prop: any) => {
         component={AboutScreen}
         options={{
           title: "关于",
+          headerStyle: {
+            backgroundColor: "#fff",
+          },
+        }}
+      />
+      <Stack.Screen
+        name="CounterScreen"
+        component={CounterScreen}
+        options={{
+          title: "计数",
           headerStyle: {
             backgroundColor: "#fff",
           },
