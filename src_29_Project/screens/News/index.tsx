@@ -53,7 +53,7 @@ export default () => {
               <Ionicons size={18} name={"heart-outline"} />
             </View>
           </View>
-          <Image source={{ uri: item.thumbnail_pic_s ? item.thumbnail_pic_s : "https://" }} />
+          <Image style={{ width: 120, height: 80, marginRight: 10 }} source={{ uri: item.thumbnail_pic_s ? item.thumbnail_pic_s : "https://" }} />
         </View>
       </TouchableOpacity>
     );
