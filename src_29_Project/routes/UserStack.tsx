@@ -39,7 +39,7 @@ export default (prop: any) => {
         }}
       />
       <Stack.Screen
-        name="CounterScreen"
+        name="Counter"
         component={CounterScreen}
         options={{
           title: "计数",

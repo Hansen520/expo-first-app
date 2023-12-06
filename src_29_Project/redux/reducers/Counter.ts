@@ -11,7 +11,6 @@ const initState = {
 export default (state = initState, action: { type: string, payload: any }) => {
     switch (action.type) {
         case actionTypes.COUNTER_INCREMENT:
-            
             return {
                 ...state,
                 num: state.num + action.payload

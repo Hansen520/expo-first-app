@@ -15,7 +15,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
-export default ({ navigation }) => {
+export default ({ navigation }: any) => {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
@@ -48,7 +48,7 @@ export default ({ navigation }) => {
               <Ionicons name={'chevron-forward-outline'} size={20} color={'#bbb'} />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={navigation.navigate('Counter')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Counter')}>
           <View style={[styles.listItem]}>
             <View style={{ flexDirection: 'row' }}>
               <Ionicons name={'settings-outline'} size={20} color={'#2d3'} />

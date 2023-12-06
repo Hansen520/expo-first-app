@@ -4,10 +4,11 @@
  */
 import { StyleSheet, Button } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-  
+import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeStack from "./HomeStack";
 import NewsStack from "./NewsStack";
 import UserStack from "./UserStack";
+import CounterStack from "./CounterStack";
 
 const TabBottom = createBottomTabNavigator();
 const App = () => {
