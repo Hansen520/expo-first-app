@@ -24,7 +24,7 @@ export default (prop: any) => {
         options={{
           title: "个人中心",
           headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "tomato",
           },
         }}
       />

@@ -16,7 +16,7 @@ export default (prop: any) => {
         options={{
           title: "新闻",
           headerStyle: {
-            backgroundColor: "white",
+            backgroundColor: "tomato",
           },
         }}
       />

@@ -16,13 +16,13 @@ export default () => {
           <TouchableOpacity>
             <View style={[styles.itemBase]}>
               <Ionicons name="scan-outline" size={40} color={"#fff"} />
-              <Text style={[styles.fontBase]}>到一扫</Text>
+              <Text style={[styles.fontBase]}>扫一扫</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
             <View style={[styles.itemBase]}>
               <Ionicons name="qr-code-outline" size={40} color={"#fff"} />
-              <Text style={[styles.fontBase]}>付款吗</Text>
+              <Text style={[styles.fontBase]}>付款嘛</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>

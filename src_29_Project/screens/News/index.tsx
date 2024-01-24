@@ -31,7 +31,6 @@ export default () => {
   const getList = () => {
     getNewsList(type)
       .then((res) => {
-        console.log(res, 33);
         setList(res);
       })
       .catch((err) => console.error(err));

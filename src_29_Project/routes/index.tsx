@@ -14,28 +14,29 @@ const TabBottom = createBottomTabNavigator();
 const App = () => {
   return (
     <TabBottom.Navigator
-      initialRouteName="News"
+      initialRouteName="Home"
       screenOptions={({ route }: any) => ({
-        TabBottomBarIcon: ({ focused, color, size }: any) => {
+        tabBarInactiveTintColor: 'green',
+        tabBarActiveTintColor: 'tomato',
+        tabBarIcon: ({ focused, color, size }: any) => {
           let iconName: any;
           if (route.name === "Home") {
-            iconName = focused ? 'add-circle' : 'add-circle-outline';
+            iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === "News") {
-            iconName = focused ? 'settings' : 'person-outline'
+            iconName = focused ? 'aperture' : 'aperture-outline'
           } else if (route.name === 'User') {
-            iconName = focused ? 'settings' : 'person-outline'
+            iconName = focused ? 'person' : 'person-outline'
+          } else { 
+
+            iconName = 'setting';
           }
-          return <Ionicons title={iconName} color={color} size={size} />;
+          return <Ionicons name={iconName} color={color} size={size} />;
         },
       })}
-      tarBarOptions={{
-        activeTintColor: "tomato",
-        inactiveTintColor: "gray",
-      }}
     >
-      <TabBottom.Screen name="Home" component={HomeStack} />
-      <TabBottom.Screen name="News" component={NewsStack} />
-      <TabBottom.Screen name="User" component={UserStack} />
+      <TabBottom.Screen key={'Home'} name="Home" options={{ headerShown: false }} component={HomeStack} />
+      <TabBottom.Screen key={'News'} name="News" options={{ headerShown: false }} component={NewsStack} />
+      <TabBottom.Screen key={'User'} name="User" options={{ headerShown: false }} component={UserStack} />
     </TabBottom.Navigator>
   );
 };

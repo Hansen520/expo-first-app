@@ -3,12 +3,13 @@
  * @Description: description
  */
 import { Camera, CameraType } from "expo-camera";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TouchableOpacity, Text, View, StyleSheet, Dimensions } from "react-native";
 
 const CameraScreen = () => {
   const [hasPermission, setHasPermission] = useState<any>(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
+  const cameraRef: any = useRef();
 
   useEffect(() => {
     (async () => {
@@ -24,14 +25,15 @@ const CameraScreen = () => {
     return <Text>No access to camera</Text>;
   }
 
-  const takePicture = () => {
-    if (Camera) {
-      Camera.takePictureAsync({ onPictureSaved: onPictureSaved });
+  const takePicture = async () => {
+    if (cameraRef.current) {
+      const res = await cameraRef.current.takePictureAsync({ onPictureSaved: onPictureSaved, quality: 1, base64: true });
+      console.log(res, 31);
     }
   };
 
   const onPictureSaved = (photo: any) => {
-    console.log(photo);
+    console.log(photo, 34);
   };
 
   return (
@@ -40,7 +42,7 @@ const CameraScreen = () => {
         style={styles.camera}
         type={type}
         ref={(r) => {
-          camera = r;
+          cameraRef.current = r;
         }}
       >
         <View style={styles.buttonContainer}>
@@ -72,13 +74,17 @@ const styles = StyleSheet.create({
   },
   camera: {
     width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    height: Dimensions.get('window').width / (3 / 4),
     justifyContent: "flex-end",
   },
-  flip: {},
-  Shot: {},
+  flip: {
+  },
+  Shot: {
+    
+  },
   button: {},
   buttonContainer: {
+    borderColor: 'red',
     flexDirection: "row",
     backgroundColor: "transparent",
     justifyContent: "space-between",
