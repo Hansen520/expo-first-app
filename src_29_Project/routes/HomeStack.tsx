@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from "../screens/Home";
 import TakePictureScreen from "../screens/Home/TakePicture";
+import HomeApplication from "../screens/HomeApplication";
 
 const Stack = createStackNavigator();
 export default (prop: any) => {
@@ -14,14 +15,15 @@ export default (prop: any) => {
         headerMode: "float",
       }}
     >
-      <Stack.Screen name="金总的拍照神器" component={TakePictureScreen} />
+      
+      <Stack.Screen name="小金的耍酷神器" component={TakePictureScreen} />
       <Stack.Screen
         name="Home"
         component={HomeScreen}
         options={{
           title: "首页",
           headerStyle: {
-            backgroundColor: "tomato",
+            backgroundColor: "#37ae1abb",
             elevation: 0, // 删除android opacity
             shadowOpacity: 0, // 删除 ios opacity
           },
@@ -33,6 +35,12 @@ export default (prop: any) => {
           ),
         }}
       />
+      <Stack.Screen name="homeApplication" component={HomeApplication} options={{
+        title: '其他应用',
+        headerStyle: {
+          backgroundColor: '#fff'
+        }
+      }} />
     </Stack.Navigator>
   );
 };

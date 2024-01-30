@@ -16,8 +16,8 @@ const App = () => {
     <TabBottom.Navigator
       initialRouteName="Home"
       screenOptions={({ route }: any) => ({
-        tabBarInactiveTintColor: 'green',
-        tabBarActiveTintColor: 'tomato',
+        tabBarInactiveTintColor: '#000000c2',
+        tabBarActiveTintColor: '#00b38a',
         tabBarIcon: ({ focused, color, size }: any) => {
           let iconName: any;
           if (route.name === "Home") {
