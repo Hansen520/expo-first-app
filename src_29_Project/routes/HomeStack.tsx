@@ -29,7 +29,7 @@ export default (prop: any) => {
           },
           headerTintColor: "#fff",
           headerRight: () => (
-            <TouchableOpacity onPress={() => prop.navigation.navigate("金总的拍照神器")}>
+            <TouchableOpacity onPress={() => prop.navigation.navigate("小金的耍酷神器")}>
               <Text style={{ fontSize: 18, color: "white", marginRight: 10 }}>拍照</Text>
             </TouchableOpacity>
           ),

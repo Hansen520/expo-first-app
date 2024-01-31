@@ -3,7 +3,7 @@
  * @Description: description
  */
 import { useEffect, useState } from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions, StatusBar } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { getNewsList } from "../../utils/api";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
@@ -53,6 +53,7 @@ export default ({ navigation }: { navigation: any }) => {
         title: item.title,
         uniquekey: item.uniquekey
       })}>
+        <StatusBar backgroundColor={'#37ae1abb'} />
         <View style={[styles.newsItem1Container]}>
           <View style={[styles.newsItem1Text]}>
             <Text style={[item.thumbnail_pic_s ? styles.newsItem1Title : styles.newsItem2Title]} numberOfLines={2}>

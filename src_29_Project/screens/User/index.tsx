@@ -9,7 +9,8 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  StatusBar
 } from 'react-native';
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,6 +20,7 @@ export default ({ navigation }: any) => {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
+        <StatusBar backgroundColor={'#37ae1abb'} />
         <View style={[styles.avatar]}>
           <Image
             source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}

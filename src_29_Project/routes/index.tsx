@@ -2,7 +2,7 @@
  * @Date: 2023-11-24 11:10:03
  * @Description: description
  */
-import { StyleSheet, Button } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeStack from "./HomeStack";
@@ -34,6 +34,7 @@ const App = () => {
         },
       })}
     >
+      
       <TabBottom.Screen key={'Home'} name="Home" options={{ headerShown: false }} component={HomeStack} />
       <TabBottom.Screen key={'News'} name="News" options={{ headerShown: false }} component={NewsStack} />
       <TabBottom.Screen key={'User'} name="User" options={{ headerShown: false }} component={UserStack} />

@@ -14,6 +14,7 @@ import {
   FlatList,
   Touchable,
   Alert,
+  StatusBar
 } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -43,16 +44,24 @@ export default ({ navigation }: { navigation: any }) => {
         return;
       }
       try {
-        let location = await Location.getCurrentPositionAsync({
+        Location.getCurrentPositionAsync({
           accuracy: Location.Accuracy.Highest,
           timeInterval: 1000,
           mayShowUserSettingsDialog: true,
-        });
-        setLocation(location);
+        }).then((res) => {
+          setLocation(res);
+        })
+        // setLocation(location);
+
+        // const coords = {
+        //   longitude: location.coords.longitude || 120.2052342,
+        //   latitude: location.coords.latitude || 30.2489634,
+        // };
         const coords = {
-          longitude: location.coords.longitude,
-          latitude: location.coords.latitude,
-        };
+          longitude: 120.2052342,
+          latitude: 30.2489634,
+        }
+        console.log(coords, 58);
         const res = await Promise.all([
           getCityInfo(coords),
           getDices(coords),
@@ -75,6 +84,7 @@ export default ({ navigation }: { navigation: any }) => {
         style={[styles.indexContainer]}
       >
         <View style={[styles.indexItem]}>
+          
           <Text style={[styles.indexName]}>{item.name}</Text>
           <Text style={[styles.indexBase]}>{item.category}</Text>
         </View>
@@ -83,6 +93,7 @@ export default ({ navigation }: { navigation: any }) => {
   };
   return (
     <View>
+      <StatusBar backgroundColor={'#37ae1abb'} />
       <ScrollView>
         <View style={[styles.container]}>
           <TouchableOpacity
@@ -171,6 +182,7 @@ export default ({ navigation }: { navigation: any }) => {
           <Text style={[styles.cityText]}>
             {city?.country} {city?.adm1} {city?.adm2} {city?.name}
           </Text>
+          <Text>{JSON.stringify(location)}</Text>
         </View>
         <View>
           <FlatList
