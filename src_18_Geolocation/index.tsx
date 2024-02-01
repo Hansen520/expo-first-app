@@ -2,52 +2,65 @@
  * @Date: 2023-11-17 14:06:30
  * @Description: description
  */
-import React, { useState, useEffect } from "react";
-import { Platform, Text, View, StyleSheet } from "react-native";
+import React, { useState, useEffect, useRef } from "react";
+import { Platform, Text, View, StyleSheet, PermissionsAndroid, Alert } from "react-native";
+import Geolocation from "@react-native-community/geolocation";
+import * as Location from 'expo-location';
+import { useFocusEffect } from '@react-navigation/native';
+import { WebView } from "react-native-webview";
 
-import * as Location from "expo-location";
+// import * as Location from "expo-location";
 
 export default function App() {
-  const [location, setLocation] = useState<any>(null);
-  const [errorMsg, setErrorMsg] = useState("");
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      console.log(status, 17);
-      if (status !== "granted") {
-        setErrorMsg("Permission to access location was denied");
-        return;
+  const webViewRef = useRef<any>(null);
+  // useEffect(() => {
+  //   (async () => {
+  //    console.log(1);
+  //   })();
+  // }, []);
+  const handleMessage = (e: any) => {
+    console.log(e, 23);
+    if (!e) {
+      return
+    }
+    const result = JSON.parse(e.nativeEvent.data)
+    console.log(27);
+    switch (result.event) {
+      case 'getAddressSuccess': {
+        const { position } = result.message
+        // await this.loadAddressList(position)
+        console.log(position, 31);
       }
-      try {
-        let location = await Location.getCurrentPositionAsync({
-          // accuracy: Location.Accuracy4.Highest,
-          distanceInterval: 10000,
-          timeInterval: 15000,
-        });
-        console.log(location, 23);
-        setLocation(location);
-      } catch (err) {
-        console.log(err, 29);
+        break
+      case 'getAddressError': {
+        //错误处理
+        break
       }
-    })();
-  }, []);
-
-  let text = "Waiting..";
-  if (errorMsg) {
-    text = errorMsg;
-  } else if (location) {
-    text = JSON.stringify(location);
-  } else { 
-
-    text = 'no Loading'
+      default:
+        break
+    }
   }
+  const onLoadWebView = () => {
+    console.log(4);
+    webViewRef.current!.injectJavaScript(`onMessage({ event: 'getPosition' })`)
 
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        {text}
-      </Text>
+      <WebView
+        ref={webViewRef}
+        onMessage={e => {
+          handleMessage(e)
+        }}
+        useWebKit={true}
+        javaScriptEnabled={true}
+        domStorageEnabled={true}
+        style={{ height: 1 }}
+        onLoadEnd={onLoadWebView}
+        source={{ uri: 'https://zhao-long950316.gitee.io' }}
+        scrollEnabled={false}
+      />
+      <Text>111</Text>
     </View>
   );
 }
@@ -56,15 +69,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     height: 200,
-    marginTop: 30
+    marginTop: 30,
   },
   paragraph: {
-    marginTop: 20
+    marginTop: 20,
   },
-<<<<<<< Updated upstream
-=======
-  paragraph: {
-    marginTop: 100
-  },
->>>>>>> Stashed changes
 });
