@@ -7,7 +7,7 @@ import { Animated, Text, View, StyleSheet, Button, SafeAreaView } from "react-na
 import { WebView } from "react-native-webview";
 
 const App = () => {
-  return <WebView source={{ html: '<h1><center>Hello world</center></h1>' }} style={{ marginTop: 20 }} />;
+  return <WebView source={{ uri: 'https://zhao-long950316.gitee.io/' }} style={{ marginTop: 20 }} />;
 };
 
 export default App;
