@@ -5,7 +5,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import Detail from "./src_18_Geolocation";
+import Detail from "./src_29_Project";
 import { Provider } from "react-redux";
 import store from "./src_29_Project/redux/store";
 

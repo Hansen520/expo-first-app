@@ -41,9 +41,7 @@ export default function App() {
     }
   }
   const onLoadWebView = () => {
-    console.log(4);
     webViewRef.current!.injectJavaScript(`onMessage({ event: 'getPosition' })`)
-
   }
   return (
     <View style={styles.container}>
@@ -60,7 +58,6 @@ export default function App() {
         source={{ uri: 'https://zhao-long950316.gitee.io' }}
         scrollEnabled={false}
       />
-      <Text>111</Text>
     </View>
   );
 }
