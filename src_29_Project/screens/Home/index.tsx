@@ -26,7 +26,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const Stack = createStackNavigator();
 export default ({ navigation }: { navigation: any }) => {
-  const [location, setLocation] = useState<any>({});
+  const [location, setLocation] = useState<any>(null);
   const [errorMsg, setErrorMsg] = useState("");
   const [city, setCity] = useState<{
     adm1: string;
@@ -126,7 +126,6 @@ export default ({ navigation }: { navigation: any }) => {
               navigation.navigate("homeApplication", {
                 url: "https://m.baidu.com",
                 title: "hello, 我是嘟嘟",
-                uniquekey: "11dadasd",
               })
             }
           >
@@ -140,7 +139,6 @@ export default ({ navigation }: { navigation: any }) => {
               navigation.navigate("homeApplication", {
                 url: "https://cn.bing.com/#",
                 title: "hello, 我是嘟嘟",
-                uniquekey: "11dadasd",
               });
             }}
           >
@@ -154,7 +152,6 @@ export default ({ navigation }: { navigation: any }) => {
               navigation.navigate("homeApplication", {
                 url: "https://excalidraw.com/",
                 title: "hello, 我是嘟嘟",
-                uniquekey: "11dadasd",
               });
             }}
           >
@@ -168,7 +165,6 @@ export default ({ navigation }: { navigation: any }) => {
               navigation.navigate("homeApplication", {
                 url: "https://www.doubao.com/chat/5128745716994",
                 title: "hello, 我是嘟嘟",
-                uniquekey: "11dadasd",
               });
             }}
           >
@@ -249,19 +245,17 @@ export default ({ navigation }: { navigation: any }) => {
             })}
         </View>
       </ScrollView>
-      <WebView
-        ref={webViewRef}
-        onMessage={(e) => {
-          handleMessage(e);
-        }}
-        useWebKit={true}
-        javaScriptEnabled={true}
-        domStorageEnabled={true}
-        style={{ height: 1 }}
-        onLoadEnd={onLoadWebView}
-        source={{ uri: "https://zhao-long950316.gitee.io" }}
-        scrollEnabled={false}
-      />
+      {!location && (
+        <WebView
+          ref={webViewRef}
+          onMessage={(e) => {
+            handleMessage(e);
+          }}
+          style={{ height: 1, width: 1, position: "absolute", top: 0, left: 0, display: "none" }}
+          onLoadEnd={onLoadWebView}
+          source={{ uri: "https://zhao-long950316.gitee.io" }}
+        />
+      )}
       {/* <Text>{JSON.stringify(location)}</Text> */}
     </View>
   );
@@ -331,9 +325,9 @@ const styles = StyleSheet.create({
   },
   dailyContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
     marginHorizontal: 10,
-    textAlign: 'center'
+    textAlign: "center",
   },
   dailyItem: {
     backgroundColor: "#e7d8d877",
